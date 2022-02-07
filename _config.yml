@@ -6,6 +6,8 @@ collections:
     output: true
   clients:
     output: true
+  servers:
+    output: true
 
 defaults:
   - scope:
@@ -18,6 +20,11 @@ defaults:
       type: "clients"
     values:
       layout: "client"
+  - scope:
+      path: ""
+      type: "servers"
+    values:
+      layout: "server"
   - scope:
       path: ""
       type: "posts"

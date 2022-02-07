@@ -280,7 +280,7 @@ class Compare {
 				if(key[1].toLowerCase() !== 'on') {
 					let th = document.createElement('th');
 					th.setAttribute('scope', 'col');
-					th.innerHTML = `<span class="data-family-name">${this.nicenames.family[key[0]]}</span><span class="data-platform-name">${this.nicenames.platform[key[1]]}</span>`;
+					th.innerHTML = `<span class="data-family-name">${this.nicenames.client[key[0]]}</span><span class="data-platform-name">${this.nicenames.platform[key[1]]}</span>`;
 					theadTr.append(th);
 				}
 			}

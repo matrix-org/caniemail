@@ -1,7 +1,7 @@
 ---
 title: Email Client Support Scoreboard
 layout: default
-permalink: /scoreboard/
+permalink: /scoreboard/client
 ---
 <div class="post post--scoreboard">
 	<div class="scoreboard-intro">
@@ -13,5 +13,6 @@ permalink: /scoreboard/
 			(Because every test is done manually, some features might not have been tested on every email client.)
 		</p>
 	</div>
-	{% include client-scores.html %}
+  {% include scores.html stats_key="server_stats" family=site.servers nicenames=site.data.nicenames.server family-path="server" %}
+
 </div>

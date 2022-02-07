@@ -50,7 +50,7 @@ layout: embed
 						{% if family-page != nil and family-page != "" %}
 						<a href="https://www.caniemail.com/clients/{{family-key}}/" target="_blank" rel="noopener">
 						{% endif %}
-						{{ site.data.nicenames.family[family-key] | default: family-key }}
+						{{ site.data.nicenames.client[family-key] | default: family-key }}
 						{% if family-page != nil and family-page != "" %}
 						</a>
 						{% endif %}
@@ -173,22 +173,22 @@ layout: embed
 						{% when 'y' %}
 							{% capture feature-support-y %}
 								{{ feature-support-y }}
-								<li><span class="tag supported">{{ site.data.nicenames.family[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
+								<li><span class="tag supported">{{ site.data.nicenames.client[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
 							{% endcapture %}
 						{% when 'a' %}
 							{% capture feature-support-a %}
 								{{ feature-support-a }}
-								<li><span class="tag mitigated">{{ site.data.nicenames.family[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
+								<li><span class="tag mitigated">{{ site.data.nicenames.client[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
 							{% endcapture %}
 						{% when 'n' %}
 							{% capture feature-support-n %}
 								{{ feature-support-n }}
-								<li><span class="tag unsupported">{{ site.data.nicenames.family[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
+								<li><span class="tag unsupported">{{ site.data.nicenames.client[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
 							{% endcapture %}
 						{% when 'u' %}
 							{% capture client-features-u %}
 								{{ client-features-u }}
-								<li><span class="tag unknown">{{ site.data.nicenames.family[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
+								<li><span class="tag unknown">{{ site.data.nicenames.client[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
 							{% endcapture %}
 					{% endcase %}
 				{% endfor %}

@@ -11,13 +11,13 @@
 	1. We go through each existing feature.
 {% endcomment %}
 {% for feature in site.features %}
-	{% assign feature-stats = feature.client_stats %}
+	{% assign feature-stats = feature[include.stats_key] %}
 	{% comment %}
 		2. We go through each family of the current feature.
 	{% endcomment %}
-	{% for family in feature.client_stats %}
+	{% for family in feature[include.stats_key] %}
 		{% assign family-key = family | first %}
-		{% assign family-values = feature.client_stats[family-key] %}
+		{% assign family-values = feature[include.stats_key][family-key] %}
 		{% assign client-index = 0 %}
 		{% comment %}
 			3. We go through each platform of the current family and
@@ -184,11 +184,11 @@
 		</div>
 		<span class="score-text">
 			<span class="score-name">
-				{% assign family-page = site.clients | where:"slug", client-family | first %}
+				{% assign family-page = include.family | where:"slug", client-family | first %}
 				{% if family-page != nil and family-page != "" %}
-				<a href="/clients/{{client-family}}/#{{ client-platform | slugify }}">
+				<a href="/{{include.family-path}}/{{client-family}}/#{{ client-platform | slugify }}">
 				{% endif %}
-				{{ site.data.nicenames.family[client-family] | default: client-family }}
+				{{ include.nicenames[client-family] | default: client-family }}
 				({{ site.data.nicenames.platform[client-platform] | default: client-platform }})
 				{% if family-page != nil and family-page != "" %}
 				</a>

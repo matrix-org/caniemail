@@ -1,7 +1,11 @@
-family:
+client:
   element: "Element"
   fluffy: "FluffyChat"
+server:
+  synapse: "Synapse"
+  dendrite: "Dendrite"
 platform:
+  all: "All supported"
   linux: "Linux"
   web: "Web"
   ios: "iOS"

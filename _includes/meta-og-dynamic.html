@@ -66,11 +66,11 @@
 	{%- endfor -%}
 	{%- case family-average-support -%}
 		{%- when 'y' -%}
-			{%- assign og-description-y = og-description-y | push: site.data.nicenames.family[family-key] -%}
+			{%- assign og-description-y = og-description-y | push: site.data.nicenames.client[family-key] -%}
 		{%- when 'a' -%}
-			{%- assign og-description-a = og-description-a | push: site.data.nicenames.family[family-key] -%}
+			{%- assign og-description-a = og-description-a | push: site.data.nicenames.client[family-key] -%}
 		{%- when 'n' -%}
-			{%- assign og-description-n = og-description-n | push: site.data.nicenames.family[family-key] -%}
+			{%- assign og-description-n = og-description-n | push: site.data.nicenames.client[family-key] -%}
 	{%- endcase -%}
 {%- endfor -%}
 {%- comment -%}

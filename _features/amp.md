@@ -16,6 +16,10 @@ client_stats:
   fluffy:
     web:
       12: "n #3"
+server_stats:
+  synapse:
+    all:
+      12: y #1
 notes: "This is a global note."
 footnotes:
   - key: "1"

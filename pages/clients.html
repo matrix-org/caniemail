@@ -6,7 +6,7 @@ permalink: /clients/
 <div class="compare">
 	<form action="/" method="get" id="compare-form" class="compare-form">
 		<div class="settings-title">
-			Select email clients to compare 
+			Select email clients to compare
 			<div class="settings-title-actions">
 				<button type="button" id="compare-check-all-button" class="button" data-label-toggle="Uncheck all" data-checked="true">Check all</button>
 				<div class="button-group">
@@ -21,7 +21,7 @@ permalink: /clients/
 				{% for client in clients %}
 					<li class="compare-list-item">
 						<input type="checkbox" id="compare-{{ client.slug }}" name="{{ client.slug }}" value="on" />
-						<label for="compare-{{ client.slug }}">{{ site.data.nicenames.family[client.slug] | default: client.slug | escape_once }}</label>
+						<label for="compare-{{ client.slug }}">{{ site.data.nicenames.client[client.slug] | default: client.slug | escape_once }}</label>
 						<ul class="compare-child-list">
 						{% for platform in client.platforms %}
 							<li class="compare-child-list-item">
@@ -47,7 +47,7 @@ permalink: /clients/
 			{% assign clients = site.clients | sort:"display_order" %}
 			{% for client in clients %}
 				<li>
-					<a href="{{ client.url }}">{{ site.data.nicenames.family[client.slug] | default: client.slug | escape_once }}</a>
+					<a href="{{ client.url }}">{{ site.data.nicenames.client[client.slug] | default: client.slug | escape_once }}</a>
 					<small>
 					{% for platform in client.platforms %}
 						{%- if forloop.first == true -%}
