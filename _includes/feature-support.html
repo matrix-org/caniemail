@@ -1,6 +1,5 @@
 {% comment %}
 	Estimated support.
-	Showing visual representation of global support based on emailclientmarketshare.com.
 {% endcomment %}
 {% assign support-scores-y = 0 %}
 {% assign support-scores-a = 0 %}
@@ -14,10 +13,10 @@
 {% comment %}
 	1. We loop through every email client family of the current feature page.
 {% endcomment %}
-{% for support-family in page.client_stats %}
+{% for support-family in page[include.stats_key] %}
 	{% assign support-family-key = support-family | first %}
-	{% assign support-family-values = page.client_stats[support-family-key] %}
-	{% assign support-family-name = site.data.nicenames.client[support-family-key] | default: support-family-key %}
+	{% assign support-family-values = page[include.stats_key][support-family-key] %}
+	{% assign support-family-name = include.nicenames[support-family-key] | default: support-family-key %}
 	{% comment %}
 		2. We loop through every platform listed for that family.
 	{% endcomment %}
@@ -68,7 +67,7 @@
 	6. We display the data.
 {% endcomment %}
 <div class="feature-support">
-	<p class="feature-support-title">Estimated Support <a href="/support/">About</a></p>
+	<p class="feature-support-title">Estimated {{include.title}} Support <a href="/support/">About</a></p>
 	<div class="score">
 		{% if support-scores-y != 0 %}
 			{% assign support-scores-names-y-string = support-scores-y | append: '% ' | append: site.data.nicenames.support['supported'] | downcase %}

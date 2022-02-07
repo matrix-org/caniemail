@@ -10,7 +10,14 @@ layout: default
 			</div>
 		</div>
 		<div class="feature-header-column">
-			{% include feature-support.html %}
+      <div>
+        {% if page.client_stats %}
+          {% include feature-support.html title="Client" stats_key="client_stats" nicenames=site.data.nicenames.client %}
+        {% endif %}
+        {% if page.server_stats %}
+          {% include feature-support.html title="Server" stats_key="server_stats" nicenames=site.data.nicenames.server %}
+        {% endif %}
+      </div>
 		</div>
 	</header>
 	<div class="filters">
