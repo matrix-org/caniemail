@@ -20,8 +20,10 @@ support:
   mixed: "Mixed support"
 category:
   ux: "Usability"
+  mod: "Moderation"
   federation: "Federation"
+  transport: "Transportation Layer"
   voip: "VoIP"
   encrypt: "Encryption"
-  login: "Login"
+  auth: "Authentication & Login"
   service: "Generic Services"
