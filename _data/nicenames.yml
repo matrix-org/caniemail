@@ -24,6 +24,6 @@ category:
   federation: "Federation"
   transport: "Transportation Layer"
   voip: "VoIP"
-  encrypt: "Encryption"
+  encryption: "Encryption"
   auth: "Authentication & Login"
   service: "Generic Services"
