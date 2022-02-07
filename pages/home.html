@@ -1,5 +1,5 @@
 ---
-title: Support tables for HTML and CSS in emails
+title: Support tables for all features in the matrix ecosystem
 layout: default
 permalink: /
 ---
@@ -30,6 +30,11 @@ permalink: /
 			{% endfor %}
 		</ul>
 		<a href="/news/" class="button">View all news</a>
+	</div>
+	<div class="block">
+		<h1 class="list-title"><a href="/scoreboard/">Server scores</a></h1>
+		{% include client-scores.html limit=5 %}
+		<a href="/scoreboard/" class="button">View the scoreboard</a>
 	</div>
 	<div class="block">
 		<h1 class="list-title"><a href="/scoreboard/">Client scores</a></h1>

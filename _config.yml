@@ -37,3 +37,6 @@ exclude: [vendor, "pages/embed.html", "Gemfile", "Gemfile.lock", "CONTRIBUTING.m
 include: ["_js"]
 
 #incremental: true
+
+# set the encoding to utf-8
+encoding: utf-8
