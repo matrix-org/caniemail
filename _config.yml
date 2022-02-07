@@ -36,6 +36,7 @@ defaults:
       layout: "default"
 
 permalink: /:title/
+url: "https://matrix-org.github.io/canitmatrix/"
 
 plugins:
   - jekyll-mentions
