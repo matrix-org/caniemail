@@ -19,6 +19,9 @@ support:
   unknown: "Support unknown"
   mixed: "Mixed support"
 category:
+  ux: "Usability"
+  federation: "Federation"
   voip: "VoIP"
   encrypt: "Encryption"
   login: "Login"
+  service: "Generic Services"
