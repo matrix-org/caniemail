@@ -2,7 +2,8 @@
 	<div class="menu">
 	{% include navigation.html %}
 	{% include latest-post.html %}
-		<a href="{{site.url}}/clients/" class="tab{% if page.url == '/clients/' %} current{% endif %}"><span class="tab-longname">Compare email </span>clients</a>
+		<a href="{{site.url}}/clients/" class="tab{% if page.url == '/clients/' %} current{% endif %}"><span class="tab-longname">Compare </span>clients</a>
+		<a href="{{site.url}}/servers/" class="tab{% if page.url == '/servers/' %} current{% endif %}"><span class="tab-longname">Compare </span>servers</a>
 	</div>
 	{% include search.html %}
 	{% include settings.html %}

@@ -1,0 +1,64 @@
+---
+layout: default
+title: All matrix servers listed
+permalink: /servers/
+---
+<div class="compare">
+	<form action="/" method="get" id="compare-form" class="compare-form">
+		<div class="settings-title">
+			Select matrix servers to compare
+		</div>
+		<div class="compare-options">
+			<ul class="compare-list">
+				{% assign servers = site.servers | sort:"display_order" %}
+				{% for server in servers %}
+					<li class="compare-list-item">
+						<input type="checkbox" id="compare-{{ server.slug }}" name="{{ server.slug }}" value="on" />
+						<label for="compare-{{ server.slug }}">{{ server.title | default: server.slug | escape_once }}</label>
+						<ul class="compare-child-list">
+						{% for platform in server.platforms %}
+							<li class="compare-child-list-item">
+								<input type="checkbox" id="compare-{{ server.slug }}-{{ platform }}" name="{{ server.slug }}" value="{{ platform }}" />
+								<label for="compare-{{ server.slug }}-{{ platform }}">{{ site.data.nicenames.platform[platform] | default: platform | escape_once }}</label>
+							</li>
+						{% endfor %}
+						</ul>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</form>
+</div>
+<div class="posts">
+	<div class="post post--default">
+		<div class="post-inside">
+			<h1 class="post-title">Matrix Clients</h1>
+			<p>
+				Here's an index of all the matrix servers we currently test features on.
+			</p>
+			<ul class="list">
+			{% assign servers = site.servers | sort:"display_order" %}
+			{% for server in servers %}
+				<li>
+					<a href="{{ server.url }}">{{ server.title | default: server.slug | escape_once }}</a>
+					<small>
+					{% for platform in server.platforms %}
+						{%- if forloop.first == true -%}
+							(
+						{%- endif -%}
+						<a href="{{ server.url }}#{{ platform }}">{{ site.data.nicenames.platform[platform] | default: platform | escape_once }}</a>
+						{%- if forloop.last == true -%}
+							)
+						{%- else -%}
+							,&nbsp;
+						{%- endif -%}
+					{% endfor %}
+					</small>
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+<link rel="prefetch" href="{{site.url}}/api/data.json" />
+<script src="{{site.url}}/assets/js/compare.js" defer></script>

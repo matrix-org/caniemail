@@ -3,13 +3,13 @@ layout: default
 ---
 <div class="post">
 	<div class="post-inside">
-		<h1 class="post-title">{{ site.data.nicenames.client[page.slug] | default: page.slug }}</h1>
+		<h1 class="post-title">{{ page.title | default: page.slug }}</h1>
 		{{ content | markdownify }}
 
 		{% if page.platforms != nil and page.platforms != "" %}
 		<ul>
 			{% for platform-slug in page.platforms %}
-			<li><a href="#{{ platform-slug | slugify }}">{{ site.data.nicenames.client[page.slug] | default: page.slug }} ({{ site.data.nicenames.platform[platform-slug] | default: platform-slug }})</a></li>
+			<li><a href="#{{ platform-slug | slugify }}">{{ page.title | default: page.slug }} ({{ site.data.nicenames.platform[platform-slug] | default: platform-slug }})</a></li>
 			{% endfor %}
 		</ul>
 		{% endif %}
@@ -24,7 +24,7 @@ layout: default
 	{% assign client-features-n = '' %}
 	{% assign client-features-u = '' %}
 	<div class="post post--client" id="{{ platform-slug | slugify }}">
-		<h2 class="post-title"><span class="client-name">{{ site.data.nicenames.client[page.slug] | default: page.slug }}</span> ({{ site.data.nicenames.platform[platform-slug] | default: platform-slug }})</h2>
+		<h2 class="post-title"><span class="client-name">{{ page.title | default: page.slug }}</span> ({{ site.data.nicenames.platform[platform-slug] | default: platform-slug }})</h2>
 		{% comment %}
 			2. We go through every feature for that family/platform.
 		{% endcomment %}
@@ -39,22 +39,22 @@ layout: default
 							{% when 'y' %}
 								{% capture client-features-y %}
 									{{ client-features-y }}
-									<li><a class="tag supported" href="{{ feature.url | relative_url}}">{{ feature.title | escape_once }}</a></li>
+									<li><a class="tag supported" href="{{site.url}}/{{ feature.url}}">{{ feature.title | escape_once }}</a></li>
 								{% endcapture %}
 							{% when 'a' %}
 								{% capture client-features-a %}
 									{{ client-features-a }}
-									<li><a class="tag mitigated" href="{{ feature.url | relative_url}}">{{ feature.title | escape_once }}</a></li>
+									<li><a class="tag mitigated" href="{{site.url}}/{{ feature.url}}">{{ feature.title | escape_once }}</a></li>
 								{% endcapture %}
 							{% when 'n' %}
 								{% capture client-features-n %}
 									{{ client-features-n }}
-									<li><a class="tag unsupported" href="{{ feature.url | relative_url}}">{{ feature.title | escape_once }}</a></li>
+									<li><a class="tag unsupported" href="{{site.url}}/{{ feature.url}}">{{ feature.title | escape_once }}</a></li>
 								{% endcapture %}
 							{% when 'u' %}
 								{% capture client-features-u %}
 									{{ client-features-u }}
-									<li><a class="tag unknown" href="{{ feature.url | relative_url}}">{{ feature.title | escape_once }}</a></li>
+									<li><a class="tag unknown" href="{{site.url}}/{{ feature.url}}">{{ feature.title | escape_once }}</a></li>
 								{% endcapture %}
 						{% endcase %}
 					{% endif %}
@@ -62,7 +62,7 @@ layout: default
 			{% else %}
 				{% capture client-features-u %}
 					{{ client-features-u }}
-					<li><a class="tag unknown" href="{{ feature.url | relative_url}}">{{ feature.title | escape_once }}</a></li>
+					<li><a class="tag unknown" href="{{site.url}}/{{ feature.url}}">{{ feature.title | escape_once }}</a></li>
 				{% endcapture %}
 			{% endif %}
 		{% endfor %}
