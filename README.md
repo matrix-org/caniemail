@@ -4,6 +4,19 @@
 
 This runs on [Jekyll](https://jekyllrb.com/docs/) as [GitHub Pages](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages) site with a home made theme. The site uses [Sass](https://sass-lang.com/) for CSS compilation.
 
+## Tasks
+
+ - [x] clean up
+ - [ ] add our modi
+   - [x] servers
+   - [x] clients
+   - [ ] SDKs
+   - [ ] appservices / bridges
+ - [ ] fetch inital list of MSCs
+ - [ ] fix embedding support
+ - [ ] publish first draft version
+ - [ ] update metadata, footer, legal
+
 ## Installation
 
 1. **Clone the repository**.
@@ -55,7 +68,6 @@ Here is a quick overview of the project's folders structure:
     - `_data`: Data files used throughout the site. This is mainly for settings and labels.
     - `_features`: Data for every features support.
     - `_posts`: Data for the latest news.
-    - `tests`: HTML tests files to test features.
 
 * Layout:
 

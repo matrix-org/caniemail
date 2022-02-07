@@ -5,6 +5,9 @@ layout: default
 	<header class="feature-header">
 		<div class="feature-header-column">
 			<h1 class="feature-title">{{ page.title | escape_once }}</h1>
+      {% for k in page.keywords %}
+        {{k}}
+      {% endfor %}
 			<div class="feature-description">
 				{{ page.description | markdownify }}
 			</div>
