@@ -14,9 +14,9 @@
 {% comment %}
 	1. We loop through every email client family of the current feature page.
 {% endcomment %}
-{% for support-family in page.stats %}
+{% for support-family in page.client_stats %}
 	{% assign support-family-key = support-family | first %}
-	{% assign support-family-values = page.stats[support-family-key] %}
+	{% assign support-family-values = page.client_stats[support-family-key] %}
 	{% assign support-family-name = site.data.nicenames.family[support-family-key] | default: support-family-key %}
 	{% comment %}
 		2. We loop through every platform listed for that family.
@@ -95,7 +95,7 @@
 			{% endif %}
 			<span class="feature-support-summary-value supported" {{ support-scores-y-title-string }}>{{ support-scores-y }}%</span>
 			{% if support-scores-a != 0 %}
-			+ 
+			+
 			{% else %}
 			{{ site.data.nicenames.support['supported'] | downcase }}
 			{% endif %}

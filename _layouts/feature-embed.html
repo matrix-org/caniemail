@@ -27,9 +27,9 @@ layout: embed
 				2. We go through the page/feature `stats` and add all the keys.
 			{% endcomment %}
 			{% assign page-stats-keys = "" | split: '' %}
-			{% for default in page.stats %}
+			{% for default in page.client_stats %}
 				{% assign family-key = default | first %}
-				{% if page.stats[family-key].size > 0  %}
+				{% if page.client_stats[family-key].size > 0  %}
 					{% assign page-stats-keys = page-stats-keys | push: family-key %}
 				{% endif %}
 			{% endfor %}
@@ -42,7 +42,7 @@ layout: embed
 			{% endcomment %}
 			{% for family in page-families-in-order %}
 				{% assign family-key = family %}
-				{% assign family-values = page.stats[family] %}
+				{% assign family-values = page.client_stats[family] %}
 			<div class="data-family data-family--{{family-key}}" id="data-{{ page.title | slugify }}-{{ family-key }}">
 				<h3 class="data-family-name">
 					<span>
@@ -138,9 +138,9 @@ layout: embed
 			2. We go through the page/feature `stats` and add all the keys.
 		{% endcomment %}
 		{% assign page-stats-keys = "" | split: '' %}
-		{% for default in page.stats %}
+		{% for default in page.client_stats %}
 			{% assign family-key = default | first %}
-			{% if page.stats[family-key].size > 0  %}
+			{% if page.client_stats[family-key].size > 0  %}
 				{% assign page-stats-keys = page-stats-keys | push: family-key %}
 			{% endif %}
 		{% endfor %}
@@ -157,7 +157,7 @@ layout: embed
 		{% assign feature-support-u = '' %}
 		{% for family in page-families-in-order %}
 			{% assign family-key = family %}
-			{% assign family-values = page.stats[family] %}
+			{% assign family-values = page.client_stats[family] %}
 			{% for platform in family-values %}
 				{% assign platform-key = platform | first %}
 				{% assign platform-values = platform | last %}

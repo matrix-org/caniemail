@@ -13,7 +13,7 @@ permalink: /todo/
 		<h2 class="list-title">{{ site.features.size }} Features to test</h2>
 		<ol class="list">
 			{% for feature in site.features %}
-				{% assign todo-platform = feature.stats.protonmail.android %}
+				{% assign todo-platform = feature.client_stats.protonmail.android %}
 				{% if todo-platform.size == nil or todo-platform.size == 0 %}
 				<li><a href="{{ feature.url }}">{{ feature.title | escape_once }}</a></li>
 				{% else %}

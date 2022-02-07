@@ -17,7 +17,7 @@ permalink: "/api/data.json"
 			"last_test_date":{{ feature.last_test_date | jsonify }},
 			"test_url":{{ feature.test_url | prepend:site.url | jsonify }},
 			"test_results_url":{{ feature.test_results_url | jsonify }},
-			"stats":{{ feature.stats | jsonify}},
+			"stats":{{ feature.client_stats | jsonify}},
 			"notes":{{ feature.notes | jsonify}},
 			"notes_by_num":{{ feature.notes_by_num | jsonify}}
 		}{% unless forloop.last %},{% endunless %}

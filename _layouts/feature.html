@@ -37,9 +37,9 @@ layout: default
 				2. We go through the page/feature `stats` and add all the keys.
 			{% endcomment %}
 			{% assign page-stats-keys = "" | split: '' %}
-			{% for default in page.stats %}
+			{% for default in page.client_stats %}
 				{% assign family-key = default | first %}
-				{% if page.stats[family-key].size > 0  %}
+				{% if page.client_stats[family-key].size > 0  %}
 					{% assign page-stats-keys = page-stats-keys | push: family-key %}
 				{% endif %}
 			{% endfor %}
@@ -52,7 +52,7 @@ layout: default
 			{% endcomment %}
 			{% for family in page-families-in-order %}
 				{% assign family-key = family %}
-				{% assign family-values = page.stats[family] %}
+				{% assign family-values = page.client_stats[family] %}
 			<div class="data-family data-family--{{family-key}}" id="data-{{ page.title | slugify }}-{{ family-key }}">
 				<h3 class="data-family-name">
 					<span>
@@ -104,7 +104,7 @@ layout: default
 										<div class="data-version-notes">
 										{% for note-key in version-notes %}
 											{% assign note-key-slug = note-key | slugify %}
-											<a href="#{{ page.title | slugify }}-cite-note-{{ note-key-slug }}" title="{{ page.notes_by_num[note-key-slug] | markdownify | strip_html }}">{{ note-key | replace: '#', '' }}</a>
+											<a href="#{{ page.title | slugify }}-cite-note-{{ note-key-slug }}" title="{{ page.footnotes[note-key-slug] | markdownify | strip_html }}">{{ note-key | replace: '#', '' }}</a>
 										{% endfor %}
 										</div>
 									{% endif %}
@@ -123,18 +123,18 @@ layout: default
 		{% if page.notes != nil and page.notes != "" %}
 			{% assign has-page-notes = true %}
 		{% endif %}
-		{% if has-page-notes == true or page.notes_by_num.size > 0 or page.links.size > 0 %}
+		{% if has-page-notes == true or page.footnotes.size > 0 or page.links.size > 0 %}
 		<div class="data-notes">
-			{% if has-page-notes == true or page.notes_by_num.size > 0 %}
+			{% if has-page-notes == true or page.footnotes.size > 0 %}
 				<h2 class="list-title">Notes</h2>
 				{% if has-page-notes == true %}
 				{{ page.notes | markdownify }}
 				{% endif %}
-				{% if page.notes_by_num.size > 0 %}
+				{% if page.footnotes.size > 0 %}
 				<ul class="data-notes-list">
-				{% for note in page.notes_by_num %}
-					{% assign note-key = note | first %}
-					{% assign note-value = note | last %}
+				{% for note in page.footnotes %}
+					{% assign note-key = note.key %}
+					{% assign note-value = note.value %}
 					<li class="data-note" id="{{ page.title | slugify }}-cite-note-{{ note-key | slugify }}">
 						<span class="data-note-key">{{ note-key }}</span> {{ note-value | markdownify }}
 					</li>
@@ -145,9 +145,9 @@ layout: default
 			{% if page.links.size > 0 %}
 				<h2 class="list-title">Resources</h2>
 				<ul class="list">
-				{% for link in page.links %}
-					{% assign link-title = link | first %}
-					{% assign link-url = link | last %}
+				{% for entry in page.links %}
+					{% assign link-title = entry.title %}
+					{% assign link-url = entry.link %}
 					<li>
 						<a href="{{ link-url | escape_once }}">{{ link-title | markdownify | strip_html | strip }}</a>
 					</li>

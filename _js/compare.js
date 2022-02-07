@@ -301,8 +301,8 @@ class Compare {
 					if(key[1].toLowerCase() !== 'on') {
 
 						let supportValue;
-						if(key[0] in feature.stats && key[1] in feature.stats[key[0]]) {
-							const versions = feature.stats[key[0]][key[1]];
+						if(key[0] in feature.client_stats && key[1] in feature.client_stats[key[0]]) {
+							const versions = feature.client_stats[key[0]][key[1]];
 							supportValue = 'u';
 							if(versions) {
 								const lastVersionKey = Object.keys(versions)[Object.keys(versions).length - 1];
@@ -378,8 +378,8 @@ class Compare {
 			for (let key of formData.entries()) {
 				if(key[1].toLowerCase() !== 'on') {
 
-					if(key[0] in feature.stats && key[1] in feature.stats[key[0]]) {
-						const versions = feature.stats[key[0]][key[1]];
+					if(key[0] in feature.client_stats && key[1] in feature.client_stats[key[0]]) {
+						const versions = feature.client_stats[key[0]][key[1]];
 						if(versions) {
 							const lastVersionSupportValue = versions[Object.keys(versions)[Object.keys(versions).length - 1]];
 							if(lastVersionSupportValue) {

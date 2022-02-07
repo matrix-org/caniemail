@@ -12,7 +12,7 @@
 {% assign site-most-popular-families = site.clients | sort: "display_order" %}
 {%- for default in site-most-popular-families -%}
 	{%- assign family-key = default.slug -%}
-	{%- if page.stats[family-key].size > 0  -%}
+	{%- if page.client_stats[family-key].size > 0  -%}
 		{%- assign page-most-popular-families = page-most-popular-families | push: family-key -%}
 	{%- endif -%}
 {%- endfor -%}
@@ -20,7 +20,7 @@
 	2. We go through the page/feature `stats` and add all the keys.
 {%- endcomment -%}
 {%- assign page-stats-keys = "" | split: '' -%}
-{%- for default in page.stats -%}
+{%- for default in page.client_stats -%}
 	{%- assign family-key = default | first -%}
 	{%- assign page-stats-keys = page-stats-keys | push: family-key -%}
 {%- endfor -%}
@@ -36,7 +36,7 @@
 {%- assign og-description-n = "" | split: '' -%}
 {%- for default in page-most-popular-families limit:4 -%}
 	{%- assign family-key = default -%}
-	{%- assign family-values = page.stats[default] -%}
+	{%- assign family-values = page.client_stats[default] -%}
 	{%- assign family-average-support = '' -%}
 	{%- for platform in family-values -%}
 		{%- assign platform-key = platform | first -%}

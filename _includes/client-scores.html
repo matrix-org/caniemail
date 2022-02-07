@@ -11,13 +11,13 @@
 	1. We go through each existing feature.
 {% endcomment %}
 {% for feature in site.features %}
-	{% assign feature-stats = feature.stats %}
+	{% assign feature-stats = feature.client_stats %}
 	{% comment %}
 		2. We go through each family of the current feature.
 	{% endcomment %}
-	{% for family in feature.stats %}
+	{% for family in feature.client_stats %}
 		{% assign family-key = family | first %}
-		{% assign family-values = feature.stats[family-key] %}
+		{% assign family-values = feature.client_stats[family-key] %}
 		{% assign client-index = 0 %}
 		{% comment %}
 			3. We go through each platform of the current family and

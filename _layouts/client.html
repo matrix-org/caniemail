@@ -29,7 +29,7 @@ layout: default
 			2. We go through every feature for that family/platform.
 		{% endcomment %}
 		{% for feature in site.features %}
-			{% assign family-values = feature.stats[page.slug] %}
+			{% assign family-values = feature.client_stats[page.slug] %}
 			{% assign platform-values = family-values[platform-slug] %}
 			{% if platform-values != nil and platform-values != "" %}
 				{% for version in platform-values %}
