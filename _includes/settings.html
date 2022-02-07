@@ -1,7 +1,7 @@
 <div class="settings" hidden>
-	<form action="/" method="get" id="settings-form" class="settings-form">
+	<form action="{{site.url}}" method="get" id="settings-form" class="settings-form">
 		<div class="settings-title">
-			Email Clients
+			Clients
 			<div class="settings-title-actions">
 				<button type="button" id="settings-check-all-button" class="button" data-label-toggle="Check all" data-checked="false">Uncheck all</button>
 				<div class="button-group">
@@ -22,6 +22,28 @@
 							<li class="settings-child-list-item">
 								<input type="checkbox" id="settings-{{ client.slug }}-{{ platform }}" name="{{ client.slug }}" value="{{ platform }}" />
 								<label for="settings-{{ client.slug }}-{{ platform }}">{{ site.data.nicenames.platform[platform] | default: platform | escape_once }}</label>
+							</li>
+						{% endfor %}
+						</ul>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+    <div class="settings-title">
+			Servers
+		</div>
+		<div class="settings-options">
+			<ul class="settings-list">
+				{% assign servers = site.servers | sort:"display_order" %}
+				{% for server in servers %}
+					<li class="settings-list-item">
+						<input type="checkbox" id="settings-{{ server.slug }}" name="{{ server.slug }}" value="on" />
+						<label for="settings-{{ server.slug }}">{{ site.data.nicenames.server[server.slug] | default: server.slug | escape_once }}</label>
+						<ul class="settings-child-list">
+						{% for platform in server.platforms %}
+							<li class="settings-child-list-item">
+								<input type="checkbox" id="settings-{{ server.slug }}-{{ platform }}" name="{{ server.slug }}" value="{{ platform }}" />
+								<label for="settings-{{ server.slug }}-{{ platform }}">{{ site.data.nicenames.platform[platform] | default: platform | escape_once }}</label>
 							</li>
 						{% endfor %}
 						</ul>

@@ -177,7 +177,7 @@ class Search {
 					} else if(index == n - 1) {
 						message += ` and `;
 					}
-					const featureURL = `/features/${feature.slug}/`;
+					const featureURL = `{{site.url}}/features/${feature.slug}/`;
 					message += `<a href="${featureURL}">${feature.title}</a>`;
 					index++;
 				});
@@ -192,7 +192,7 @@ class Search {
 					} else if(index == n - 1) {
 						message += ` and `;
 					}
-					const featureURL = `/features/${feature.slug}/`;
+					const featureURL = `{{site.url}}/features/${feature.slug}/`;
 					message += `<a href="${featureURL}">${feature.title}</a>`;
 					index++;
 				});
@@ -232,7 +232,7 @@ class Search {
 
 		this.results.forEach(feature => {
 			if(container.querySelector(`[data-slug="${feature.slug}"]`) == null) {
-				const featureURL = `/features/${feature.slug}/`;
+				const featureURL = `{{site.url}}/features/${feature.slug}/`;
 				let div = document.createElement('div');
 				div.innerHTML = `<section class="feature feature--placeholder" data-slug="${feature.slug}">
 						<header class="feature-header">

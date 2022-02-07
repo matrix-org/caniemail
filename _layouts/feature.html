@@ -29,11 +29,11 @@ layout: default
 	</div>
   {% if page.client_stats %}
     <h2>Clients</h2>
-    {% include feature-details.html stats_key="client_stats" family=site.clients nicenames=site.data.nicenames.client family-path="client" %}
+    {% include feature-details.html stats_key="client_stats" family=site.clients nicenames=site.data.nicenames.client family-path="clients" %}
   {% endif %}
   {% if page.server_stats %}
     <h2>Servers</h2>
-    {% include feature-details.html stats_key="server_stats" family=site.servers nicenames=site.data.nicenames.server family-path="server" %}
+    {% include feature-details.html stats_key="server_stats" family=site.servers nicenames=site.data.nicenames.server family-path="servers" %}
   {% endif %}
 
 	<footer class="feature-footer">
