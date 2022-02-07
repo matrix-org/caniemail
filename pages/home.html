@@ -17,7 +17,7 @@ permalink: /
 						{% assign feature-category = feature.category | upcase | append:' ' %}
 					{% endif %}
 				{% endif %}
-			<li><a href="{{ feature.url }}">{{ feature-category | default:'' }}{{ feature.title | escape_once }}</a>, {{ feature.last_test_date | date: '%B %d, %Y' }}</li>
+			<li><a href="{{ feature.url | relative_url}}">{{ feature-category | default:'' }}{{ feature.title | escape_once }}</a>, {{ feature.last_test_date | date: '%B %d, %Y' }}</li>
 			{% endfor %}
 		</ol>
 		<a href="{{ "/features/" | relative_url }}" class="button">View all features</a>

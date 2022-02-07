@@ -27,9 +27,9 @@ class Search {
 					if(!this.data) {
 						this.loadJSONFile();
 					}
-	
+
 					this.query();
-	
+
 					if(this.term) {
 						this.updateURL();
 					}
@@ -55,7 +55,7 @@ class Search {
 	loadJSONFile() {
 
 		if(!this.data) {
-			fetch('/assets/js/features.json')
+			fetch("{{'/assets/js/features.json' | relative_url}}")
 			.then(response => {
 				return response.json();
 			})
@@ -100,7 +100,7 @@ class Search {
 				this.term = this.term.replace(new RegExp('attribute$'), '').trim();
 			}
 
-			
+
 			if(this.term.includes('+')) {
 
 				let terms = this.term.split('+');
