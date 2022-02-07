@@ -4,8 +4,6 @@ description: "This is the description of the test property."
 category: css
 keywords: a, b, c
 last_test_date: "1970-01-31"
-test_url: "/tests/template.html"
-test_results_url: "https://app.emailonacid.com/app/acidtest/uz6yTbAfykA362dvPZZKX81wEhGuUm4uJekIk2NKacALI/list"
 client_stats:
   element:
     web:
