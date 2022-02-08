@@ -40,13 +40,13 @@ permalink: /servers/
 			{% assign servers = site.servers | sort:"display_order" %}
 			{% for server in servers %}
 				<li>
-					<a href="{{ server.url }}">{{ server.title | default: server.slug | escape_once }}</a>
+					<a href="{{site.url}}/{{ server.url }}">{{ server.title | default: server.slug | escape_once }}</a>
 					<small>
 					{% for platform in server.platforms %}
 						{%- if forloop.first == true -%}
 							(
 						{%- endif -%}
-						<a href="{{ server.url }}#{{ platform }}">{{ site.data.nicenames.platform[platform] | default: platform | escape_once }}</a>
+						<a href="{{site.url}}/{{ server.url }}#{{ platform }}">{{ site.data.nicenames.platform[platform] | default: platform | escape_once }}</a>
 						{%- if forloop.last == true -%}
 							)
 						{%- else -%}
