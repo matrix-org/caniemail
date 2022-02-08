@@ -3,7 +3,7 @@ layout: default
 title: All HTML and CSS features on Can I email…
 permalink: /features/
 ---
-{% assign features-by-category = site.features | group_by:"category" %}
+{% assign features-by-category = site.features | where: "published", true | group_by:"category" %}
 {% for category in features-by-category %}
 	<h1 class="list-title" id="title-{{ category.name | slugify }}">{{ site.data.nicenames.category[category.name] | default: category.name }}</h1>
 	<ul class="list list--features">

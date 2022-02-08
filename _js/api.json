@@ -5,8 +5,8 @@ permalink: "/api/data.json"
 {
 	"api_version":"1.0.3",
 	"last_update_date":{{site.time | jsonify}},
-	"nicenames":{{site.data.nicenames | jsonify}},
-	"data":[{% for feature in site.features %}
+	"nicenames":{{site.data.nicenames | jsonify}},{%- assign features = site.features | where: "published", true -%}
+	"data":[ {% for feature in features %}
 		{
 			"slug":{{ feature.slug | jsonify }},
 			"title":{{ feature.title | jsonify }},
