@@ -14,12 +14,12 @@ repo: https://github.com/vector-im/hydrogen-web/
 screenshot: /docs/projects/images/hydrogen-large.png
 room: "#hydrogen:matrix.org"
 platforms:
-    - Linux
-    - Mac
-    - Windows
-    - Android
-    - iOS
-    - Web
+    - linux
+    - macosx
+    - windows
+    - android
+    - ios
+    - web
 featured: true
 features:
     Room directory: no

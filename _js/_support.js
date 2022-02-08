@@ -89,7 +89,7 @@ class Support {
 			}
 			summaryHTML = `
 				<span class="feature-support-summary-value supported" title="${yValueInPercent}% supported">${yValueInPercent}%</span>
-				+ 
+				+
 				<span class="feature-support-summary-value mitigated" title="${aValueInPercent}% partially supported">${aValueInPercent}%</span>
 				= ${yPlusAValueInPercent}%
 			`;
@@ -108,11 +108,11 @@ class Support {
 			`;
 		}
 
-		// If we have a subset of email clients selected through the settings,
+		// If we have a subset of Matrix Clients selected through the settings,
 		// we add a text to notice it.
 		if(window.caniemail && window.caniemail.filters && window.caniemail.settings) {
 			if(window.caniemail.filters.areApplied() && !window.caniemail.settings.isFullyChecked()) {
-				summaryHTML += `<p class="feature-support-legend">(across selected email clients)</p>`;
+				summaryHTML += `<p class="feature-support-legend">(across selected Matrix Clients)</p>`;
 			}
 		}
 		this.currentFeature.querySelector('.feature-support-summary').innerHTML = summaryHTML;

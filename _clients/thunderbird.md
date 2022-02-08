@@ -10,9 +10,9 @@ language: JavaScript
 license: MPL-2.0
 SDK: matrix-js-sdk
 platforms:
-    - Linux
-    - Mac
-    - Windows
+    - linux
+    - macosx
+    - windows
 repo: https://hg.mozilla.org/comm-central
 home: https://www.thunderbird.net/
 room: "#maildev:mozilla.org"

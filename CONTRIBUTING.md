@@ -2,7 +2,7 @@
 
 ## Add a new feature
 
-1. **Create a new Markdown file** inside the `_features` folder. You can duplicate the existing `_template.md` file for an existing model. 
+1. **Create a new Markdown file** inside the `_features` folder. You can duplicate the existing `_template.md` file for an existing model.
 
 If your test concerns an HTML element or attribute, use a `html-` prefix. If it concerns a CSS feature, use a `css-` prefix.
 
@@ -28,12 +28,12 @@ A test should be easy to read. Use `red` and `green` background colors to easily
 
 3. **Test**. Please consider the two followings methods of testing:
 
-* Use actual email clients and devices. This is the best way to test, especially for webmails where it's easy to inspect the code and see what's going on.
+* Use actual Matrix Clients and devices. This is the best way to test, especially for webmails where it's easy to inspect the code and see what's going on.
 * Use an online screenshots service (like [Litmus](https://www.litmus.com), [Email on Acid](https://www.emailonacid.com) or [Testi.at](https://www.testi.at)).
 
 4. **Fill in the results** inside the Markdown file created at step 1. Here's an overview of the different fields inside that file:
 
-* `title`: The name of the feature tested. Make it short and concise. Use `element`, `attribute` or `property` at the end of the title. 
+* `title`: The name of the feature tested. Make it short and concise. Use `element`, `attribute` or `property` at the end of the title.
 
 ```
 // Do's
@@ -53,11 +53,11 @@ HTML background
 * `test_url_results`: A full URL to tests results on an online screenshots service. Make sure this link is accessible for anyone without an account. (For example, `https://app.emailonacid.com/app/acidtest/ABCDEF/list`.)
 * `stats`: The actual support data. Stats are organized on three levels deep:
 
-    * Family: the general brand or naming of the email client. (For example: `outlook`, `gmail`, `apple-mail`.) This is used as a key for sorting and display purposes, so make sure to use the matching key you can find in the `_data/nicenames.yml` file.
-    
-        * Platform: the platform of the email client. (For example: `desktop-webmail`, `windows`, `macos`). Once again, make sure to use the matching key name you can find in the `_data/nicenames.yml` file. For better readability, exceptions can be added in naming here. For example, the mobile webmail of the Outlook family is specifically named Outlook.com, so we use a `outlook-com` platform key.
+    * Family: the general brand or naming of the Matrix Client. (For example: `outlook`, `gmail`, `apple-mail`.) This is used as a key for sorting and display purposes, so make sure to use the matching key you can find in the `_data/nicenames.yml` file.
 
-            * Version: the version number or name of the email client. If the version is unknown (for example for webmails or mobile applications), a date in the format of `YYYY-MM` is prefered.
+        * Platform: the platform of the Matrix Client. (For example: `desktop-webmail`, `windows`, `macos`). Once again, make sure to use the matching key name you can find in the `_data/nicenames.yml` file. For better readability, exceptions can be added in naming here. For example, the mobile webmail of the Outlook family is specifically named Outlook.com, so we use a `outlook-com` platform key.
+
+            * Version: the version number or name of the Matrix Client. If the version is unknown (for example for webmails or mobile applications), a date in the format of `YYYY-MM` is prefered.
 
             Each version has then a value indicating the support level (following [Can I use's own values](https://github.com/Fyrd/caniuse/blob/master/CONTRIBUTING.md)):
 
@@ -73,10 +73,10 @@ HTML background
     "2019-06":"a #1 #2"
     ```
 
-    Versions will be displayed by the order they're in. Make sure to go from the oldest version to the most recent version. 
+    Versions will be displayed by the order they're in. Make sure to go from the oldest version to the most recent version.
 
-* `notes`: Global note regarding all email clients for this feature.
-* `notes_by_num`: Specific notes for individual email clients. Each note consists of a key string and a value string. Multiple notes can be added by using a comma separator after each value. The key should match the notes added in the `stats` values. It's prefered to add numbers for the keys.
+* `notes`: Global note regarding all Matrix Clients for this feature.
+* `notes_by_num`: Specific notes for individual Matrix Clients. Each note consists of a key string and a value string. Multiple notes can be added by using a comma separator after each value. The key should match the notes added in the `stats` values. It's prefered to add numbers for the keys.
 
 ```
 // Example

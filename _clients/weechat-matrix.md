@@ -14,9 +14,9 @@ screenshot: https://raw.githubusercontent.com/benparsons/matrix-notes/master/twi
 room: "#weechat-matrix:termina.org.uk"
 featured: true
 platforms:
-    - Linux
-    - Mac
-    - Windows
+    - linux
+    - macosx
+    - windows
 client_type: terminal
 features:
     Room directory: yes

@@ -13,9 +13,9 @@ room: "#gomuks:maunium.net"
 screenshot: /docs/projects/images/gomuks.png
 featured: true
 platforms:
-    - Linux
-    - Mac
-    - Windows
+    - linux
+    - macosx
+    - windows
 client_type: terminal
 features:
     Room directory: no

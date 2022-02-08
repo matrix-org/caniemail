@@ -11,7 +11,7 @@
 {% assign support-scores-names-u = "" | split: '' %}
 
 {% comment %}
-	1. We loop through every email client family of the current feature page.
+	1. We loop through every Matrix Client family of the current feature page.
 {% endcomment %}
 {% for support-family in page[include.stats_key] %}
 	{% assign support-family-key = support-family | first %}
@@ -25,7 +25,7 @@
 		{% assign support-platform-values = support-platform | last %}
 		{% assign support-platform-name = site.data.nicenames.platform[support-platform-key] | default: support-platform-key %}
 		{% comment %}
-			3. We go for the last version listed for that specific email client.
+			3. We go for the last version listed for that specific Matrix Client.
 		{% endcomment %}
 		{% for support-version in support-platform-values %}
 			{% if forloop.last == true %}

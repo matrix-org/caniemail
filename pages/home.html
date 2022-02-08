@@ -33,12 +33,12 @@ permalink: /
 	</div>
 	<div class="block">
 		<h1 class="list-title"><a href="{{site.url}}/servers/scoreboard/">Server scores</a></h1>
-		{% include scores.html limit=5 stats_key="server_stats" family=site.servers nicenames=site.data.nicenames.server family-path="servers" %}
+		{% include scores.html limit=5 stats_key="server_stats" family=site.servers family-path="servers" %}
 		<a href="{{site.url}}/servers/scoreboard" class="button">View the scoreboard</a>
 	</div>
 	<div class="block">
 		<h1 class="list-title"><a href="{{site.url}}/clients/scoreboard/">Client scores</a></h1>
-		{% include scores.html limit=5 stats_key="client_stats" family=site.clients nicenames=site.data.nicenames.client family-path="clients" %}
+		{% include scores.html limit=5 stats_key="client_stats" family=site.clients family-path="clients" %}
 		<a href="{{site.url}}/clients/scoreboard" class="button">View the scoreboard</a>
 	</div>
 </div>

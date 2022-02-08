@@ -15,7 +15,7 @@ screenshot: /docs/projects/images/fractal-large.png
 room: "#fractal-gtk:matrix.org"
 featured: true
 platforms:
-    - Linux
+    - linux
 features:
     Room directory: yes
     Room tag showing: Predefined

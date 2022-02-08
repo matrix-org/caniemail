@@ -14,9 +14,9 @@ screenshot: https://raw.githubusercontent.com/quotient-im/Quaternion/master/quat
 room: "#quotient:matrix.org"
 featured: true
 platforms:
-    - Linux
-    - Mac
-    - Windows
+    - linux
+    - macosx
+    - windows
 features:
     Room directory: no
     Room tag showing: yes

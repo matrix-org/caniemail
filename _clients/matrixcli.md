@@ -10,7 +10,7 @@ language: Python
 license:  GPL-3.0-only
 repo: https://github.com/saadnpq/matrixcli
 platforms:
-    - Linux
+    - linux
 client_type: terminal
 featured: true
 features:

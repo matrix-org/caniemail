@@ -16,9 +16,9 @@ screenshot:
 # screenshot: /docs/projects/images/upload-a-bigger-image-for-your-project-page-to-the-images-subfolder.png
 featured: true
 platforms:
-    - Linux
-    - Mac
-    - Windows
+    - linux
+    - macosx
+    - windows
 client_type: terminal
 features:
     Room directory: no

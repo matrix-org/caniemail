@@ -15,10 +15,10 @@ screenshot: /docs/projects/images/neochat.png
 room: "#neochat:kde.org"
 featured: true
 platforms:
-    - Linux
+    - linux
     - Plasma Mobile
-    - Windows
-    - Android
+    - windows
+    - android
 features:
     Room directory: yes
     Room tag showing: no

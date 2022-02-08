@@ -15,13 +15,12 @@ room: "#fluffychat:matrix.org"
 slug: fluffychat
 featured: true
 platforms:
-    - Android
-    - iOS
-    - Web
-    - Linux
-    - Mac
-    - Windows
-    - Ubuntu Touch (Old Qml version)
+    - android
+    - ios
+    - web
+    - linux
+    - macosx
+    - windows
 features:
     Room directory: yes
     Room tag showing: Predefined

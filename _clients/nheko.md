@@ -14,9 +14,9 @@ screenshot: /docs/projects/images/nheko.png
 room: "#nheko:nheko.im"
 featured: true
 platforms:
-    - Linux
-    - Mac
-    - Windows
+    - linux
+    - macosx
+    - windows
 features:
     Room directory: yes
     Room tag showing: yes

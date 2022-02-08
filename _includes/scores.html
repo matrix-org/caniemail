@@ -1,6 +1,6 @@
 {% comment %}
-	Client scores.
-	Building an array of the global score pour each client family.
+	Calculate scores.
+	Building an array of the global score pour each family.
 {% endcomment %}
 {% assign client-scores-families = "" | split: '' %}
 {% assign client-scores-y = "" | split: '' %}
@@ -164,9 +164,12 @@
 		{% assign client-scores-u-percent = 100 | minus: client-scores-y-percent | minus: client-scores-a-percent | minus: client-scores-n-percent | round: 2 %}
 
 		{% assign client-css-class = '' %}
+    {% comment %}
 		{% if client-number-of-features <= half-number-of-features %}
 			{% assign client-css-class = 'class="not-enough-tests"' %}
 		{% endif %}
+    {% endcomment %}
+
 	<li {{ client-css-class }}>
 		<div class="score">
 			{% if client-scores-y-number != 0 %}
@@ -188,7 +191,7 @@
 				{% if family-page != nil and family-page != "" %}
 				<a href="{{site.url}}/{{include.family-path}}/{{client-family}}/#{{ client-platform | slugify }}">
 				{% endif %}
-				{{ include.nicenames[client-family] | default: client-family }}
+				{{ family-page.title | default: client-family }}
 				({{ site.data.nicenames.platform[client-platform] | default: client-platform }})
 				{% if family-page != nil and family-page != "" %}
 				</a>
