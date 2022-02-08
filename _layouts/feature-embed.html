@@ -76,7 +76,7 @@ layout: embed
 											{% when 'n' %}
 												{% assign stat-class-name = 'unsupported' %}
 											{% when 'a' %}
-												{% assign stat-class-name = 'mitigated' %}
+												{% assign stat-class-name = 'mixed' %}
 											{% when 'u' %}
 												{% assign stat-class-name = 'unknown' %}
 											{% else %}
@@ -178,7 +178,7 @@ layout: embed
 						{% when 'a' %}
 							{% capture feature-support-a %}
 								{{ feature-support-a }}
-								<li><span class="tag mitigated">{{ site.data.nicenames.client[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
+								<li><span class="tag mixed">{{ site.data.nicenames.client[family-key] | default: family-key }} <small class="tag-version">({{ site.data.nicenames.platform[platform-key] | default: platform-key }})</small></span></li>
 							{% endcapture %}
 						{% when 'n' %}
 							{% capture feature-support-n %}
@@ -201,7 +201,7 @@ layout: embed
 			</ul>
 		{% endif %}
 		{% if feature-support-a != nil and feature-support-a != "" %}
-			<h3 class="embed-tags-title">{{ site.data.nicenames.support.mitigated }}</h3>
+			<h3 class="embed-tags-title">{{ site.data.nicenames.support.mixed }}</h3>
 			<ul class="embed-tags">
 			{{ feature-support-a }}
 			</ul>

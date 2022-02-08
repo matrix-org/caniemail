@@ -1,4 +1,5 @@
 ---
+display_order: 3
 title: Conduit
 categories:
   - server

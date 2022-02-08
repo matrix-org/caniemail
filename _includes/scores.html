@@ -177,7 +177,7 @@
 			<div role="group" title="{{ client-scores-y-number | append: ' features ' | append: site.data.nicenames.support['supported'] | downcase }}" style="width:{{client-scores-y-percent | default:0 }}%;" class="supported"></div>
 			{% endif %}
 			{% if client-scores-a-number != 0 %}
-			<div role="group" title="{{ client-scores-a-number | append: ' features ' | append: site.data.nicenames.support['mitigated'] | downcase }}" style="width:{{client-scores-a-percent | default:0 }}%;" class="mitigated"></div>
+			<div role="group" title="{{ client-scores-a-number | append: ' features ' | append: site.data.nicenames.support['mixed'] | downcase }}" style="width:{{client-scores-a-percent | default:0 }}%;" class="mixed"></div>
 			{% endif %}
 			{% if client-scores-n-number != 0 %}
 			<div role="group" title="{{ client-scores-n-number | append: ' features ' | append: site.data.nicenames.support['unsupported'] | downcase }}" style="width:{{client-scores-n-percent | default:0 }}%;" class="unsupported"></div>

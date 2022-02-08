@@ -1,6 +1,7 @@
 ---
 
 title: Construct
+display_order: 10
 categories:
   - server
 description: Construct is a C++ Matrix Homeserver

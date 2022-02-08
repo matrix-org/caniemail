@@ -1,6 +1,6 @@
 ---
-
 title: Synapse
+display_order: 1
 categories:
   - server
 thumbnail: https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-29-at-00.28.25-400x284.png

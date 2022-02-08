@@ -45,7 +45,7 @@ layout: default
 							{% when 'a' %}
 								{% capture client-features-a %}
 									{{ client-features-a }}
-									<li><a class="tag mitigated" href="{{site.url}}/{{ feature.url}}">{{ feature.title | escape_once }}</a></li>
+									<li><a class="tag mixed" href="{{site.url}}/{{ feature.url}}">{{ feature.title | escape_once }}</a></li>
 								{% endcapture %}
 							{% when 'n' %}
 								{% capture client-features-n %}
@@ -74,7 +74,7 @@ layout: default
 			</ul>
 		{% endif %}
 		{% if client-features-a != nil and client-features-a != "" %}
-			<h3 class="list-title">{{ site.data.nicenames.support.mitigated }}</h3>
+			<h3 class="list-title">{{ site.data.nicenames.support.mixed }}</h3>
 			<ul class="client-tags">
 			{{ client-features-a }}
 			</ul>

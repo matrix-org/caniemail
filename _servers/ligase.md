@@ -1,5 +1,6 @@
 ---
 title: Ligase
+display_order: 15
 categories:
   - server
 thumbnail: /docs/projects/images/ligase.png

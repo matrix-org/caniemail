@@ -74,8 +74,8 @@
 			<div tabindex="0" title="{{ support-scores-names-y-string }}" role="group" style="width:{{ support-scores-y }}%;" class="supported"></div>
 		{% endif %}
 		{% if support-scores-a != 0 %}
-			{% assign support-scores-names-a-string = support-scores-a | append: '% ' | append: site.data.nicenames.support['mitigated'] | downcase %}
-			<div tabindex="0" title="{{ support-scores-names-a-string }}" role="group" style="width:{{ support-scores-a }}%;" class="mitigated"></div>
+			{% assign support-scores-names-a-string = support-scores-a | append: '% ' | append: site.data.nicenames.support['mixed'] | downcase %}
+			<div tabindex="0" title="{{ support-scores-names-a-string }}" role="group" style="width:{{ support-scores-a }}%;" class="mixed"></div>
 		{% endif %}
 		{% if support-scores-n != 0 %}
 			{% assign support-scores-names-n-string = support-scores-n | append: '% ' | append: site.data.nicenames.support['unsupported'] | downcase %}
@@ -102,11 +102,11 @@
 		{% if support-scores-a != 0 %}
 			{% assign support-scores-a-title-string = "" %}
 			{% if support-scores-y != 0 %}
-				{% assign support-scores-a-title-string = 'title="' | append: support-scores-a | append: "% " | append: site.data.nicenames.support['mitigated'] | downcase | append: '"' %}
+				{% assign support-scores-a-title-string = 'title="' | append: support-scores-a | append: "% " | append: site.data.nicenames.support['mixed'] | downcase | append: '"' %}
 			{% endif %}
-			<span class="feature-support-summary-value mitigated" {{ support-scores-a-title-string }}>{{ support-scores-a }}%</span>
+			<span class="feature-support-summary-value mixed" {{ support-scores-a-title-string }}>{{ support-scores-a }}%</span>
 			{% if support-scores-y == 0 %}
-			{{ site.data.nicenames.support['mitigated'] | downcase }}
+			{{ site.data.nicenames.support['mixed'] | downcase }}
 			{% endif %}
 		{% endif %}
 		{% if support-scores-y != 0 and support-scores-a != 0 %}

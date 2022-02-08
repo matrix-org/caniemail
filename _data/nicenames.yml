@@ -8,11 +8,11 @@ platform:
   macos: "MacOS"
 support:
   supported: "Supported"
-  mitigated: "Partially supported"
   unsupported: "Not supported"
   unknown: "Support unknown"
   mixed: "Mixed support"
 category:
+  media: "Media"
   ux: "Usability"
   mod: "Moderation"
   federation: "Federation"
