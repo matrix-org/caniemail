@@ -5,7 +5,7 @@ platform:
   ios: "iOS"
   android: "Android"
   windows: "Windows"
-  macos: "macOS"
+  macos: "MacOS"
 support:
   supported: "Supported"
   mitigated: "Partially supported"

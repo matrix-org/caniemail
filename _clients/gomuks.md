@@ -15,7 +15,7 @@ screenshot: /docs/projects/images/gomuks.png
 featured: true
 platforms:
     - linux
-    - macosx
+    - macos
     - windows
 client_type: terminal
 features:

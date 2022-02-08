@@ -16,7 +16,7 @@ room: "#weechat-matrix:termina.org.uk"
 featured: true
 platforms:
     - linux
-    - macosx
+    - macos
     - windows
 client_type: terminal
 features:

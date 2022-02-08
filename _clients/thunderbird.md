@@ -12,7 +12,7 @@ license: MPL-2.0
 SDK: matrix-js-sdk
 platforms:
     - linux
-    - macosx
+    - macos
     - windows
 repo: https://hg.mozilla.org/comm-central
 home: https://www.thunderbird.net/

@@ -20,7 +20,7 @@ platforms:
     - ios
     - web
     - linux
-    - macosx
+    - macos
     - windows
 features:
     Room directory: yes

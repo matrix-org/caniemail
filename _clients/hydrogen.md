@@ -16,7 +16,7 @@ screenshot: /docs/projects/images/hydrogen-large.png
 room: "#hydrogen:matrix.org"
 platforms:
     - linux
-    - macosx
+    - macos
     - windows
     - android
     - ios

@@ -16,7 +16,7 @@ room: "#nheko:nheko.im"
 featured: true
 platforms:
     - linux
-    - macosx
+    - macos
     - windows
 features:
     Room directory: yes

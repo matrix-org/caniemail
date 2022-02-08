@@ -18,7 +18,7 @@ room: "#schildichat-web:matrix.org"
 SDK: matrix-js-sdk, matrix-react-sdk
 platforms:
     - linux
-    - macosx
+    - macos
     - windows
     - web
     - android

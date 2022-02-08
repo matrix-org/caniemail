@@ -16,7 +16,7 @@ room: "#quotient:matrix.org"
 featured: true
 platforms:
     - linux
-    - macosx
+    - macos
     - windows
 features:
     Room directory: no
