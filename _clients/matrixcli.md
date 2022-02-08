@@ -1,6 +1,7 @@
 ---
 
 title: matrixcli
+display_order: 10
 categories:
  - client
 description: Command line Matrix client.

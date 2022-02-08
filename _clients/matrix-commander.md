@@ -1,6 +1,6 @@
 ---
-
 title: matrix-commander
+display_order: 10
 categories:
  - client
 description: Simple CLI-based Matrix client for sending and receiving with support for end-to-end encryption, emoji verification and much more

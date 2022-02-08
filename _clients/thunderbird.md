@@ -1,6 +1,7 @@
 ---
 
 title: Mozilla Thunderbird
+display_order: 10
 categories:
  - client
 description: A free open-source email, calendar & chat app

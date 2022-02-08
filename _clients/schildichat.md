@@ -1,5 +1,6 @@
 ---
 
+display_order: 10
 title: SchildiChat Web/Desktop
 slug: schildichat
 categories:

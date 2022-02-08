@@ -2,6 +2,7 @@
 
 title: Hydrogen
 slug: hydrogen
+display_order: 2
 categories:
     - client
 thumbnail: /docs/projects/images/hydrogen-small.png

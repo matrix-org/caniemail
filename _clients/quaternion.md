@@ -1,6 +1,7 @@
 ---
 
 title: Quaternion
+display_order: 10
 categories:
  - client
 thumbnail: https://raw.githubusercontent.com/quotient-im/Quaternion/master/quaternion.png

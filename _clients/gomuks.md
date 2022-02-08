@@ -1,5 +1,6 @@
 ---
 title: gomuks
+display_order: 10
 categories:
  - client
 thumbnail: /docs/projects/images/gomuks-thumbnail.png

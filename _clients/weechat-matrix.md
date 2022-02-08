@@ -1,6 +1,7 @@
 ---
 
 title: weechat-matrix
+display_order: 10
 categories:
  - client
 thumbnail: https://raw.githubusercontent.com/benparsons/matrix-notes/master/twim/weechat-matrix.png

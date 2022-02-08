@@ -1,6 +1,7 @@
 ---
 
 title: Nheko
+display_order: 10
 categories:
  - client
 thumbnail: /docs/projects/images/nheko_thumb.png

@@ -1,5 +1,6 @@
 ---
 title: matrix-client.el
+display_order: 10
 categories:
  - client
 thumbnail: /docs/projects/images/matrix-el-thumb.png

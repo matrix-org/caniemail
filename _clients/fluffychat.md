@@ -1,6 +1,7 @@
 ---
 
 title: FluffyChat
+display_order: 5
 categories:
  - client
 thumbnail: /docs/projects/images/fluffychat-screenshot.png

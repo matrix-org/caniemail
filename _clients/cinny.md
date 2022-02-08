@@ -1,6 +1,7 @@
 ---
 title: Cinny
 slug: cinny
+display_order: 5
 categories:
     - client
 thumbnail: /docs/projects/images/cinny-preview-butter.png

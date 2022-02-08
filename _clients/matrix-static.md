@@ -1,5 +1,6 @@
 ---
 title: matrix-static
+display_order: 10
 categories:
  - client
 description: A static golang generated preview of public world readable Matrix rooms

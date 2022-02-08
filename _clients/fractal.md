@@ -1,6 +1,7 @@
 ---
 
 title: Fractal
+display_order: 6
 categories:
  - client
 thumbnail: /docs/projects/images/fractal-small.png

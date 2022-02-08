@@ -1,6 +1,6 @@
 ---
-
 title: NeoChat
+display_order: 5
 categories:
  - client
 thumbnail: /docs/projects/images/neochat_thumb.png

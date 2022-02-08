@@ -42,7 +42,7 @@
 						{% if family-page != nil and family-page != "" %}
 						<a href="{{site.url}}/{{include.family-path}}/{{family-key}}/">
 						{% endif %}
-						{{ include.nicenames[family-key] | default: family-key }}
+						{{ family-page.title | default: family-key }}
 						{% if family-page != nil and family-page != "" %}
 						</a>
 						{% endif %}

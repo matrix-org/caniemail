@@ -1,6 +1,6 @@
 ---
 
-title: Element Web/Desktop
+title: Element
 slug: element
 categories:
     - client
@@ -23,7 +23,7 @@ platforms:
     - android
     - ios
 featured: true
-sort_order: 100
+display_order: 1
 features:
     Room directory: yes
     Room tag showing: yes

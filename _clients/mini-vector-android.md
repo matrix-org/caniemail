@@ -1,5 +1,6 @@
 ---
 title: miniVector
+display_order: 10
 categories:
  - client
 description: A simpler Matrix client for Android, with fewer permissions and dependencies

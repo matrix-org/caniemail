@@ -1,5 +1,6 @@
 ---
 title: Rambox
+display_order: 10
 categories:
  - client
 description: Cross Platform multi-protocol messaging app that combines common web applications into one
