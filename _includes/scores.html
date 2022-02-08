@@ -10,7 +10,7 @@
 {% comment %}
 	1. We go through each existing feature.
 {% endcomment %}
-{% for feature in site.features %}
+{% for feature in site.features | where "published", true%}
 	{% assign feature-stats = feature[include.stats_key] %}
 	{% comment %}
 		2. We go through each family of the current feature.
