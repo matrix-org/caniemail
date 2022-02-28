@@ -13,9 +13,9 @@
 {% comment %}
 	1. We loop through every Matrix Client family of the current feature page.
 {% endcomment %}
-{% for support-family in page[include.stats_key] %}
+{% for support-family in include.stats %}
 	{% assign support-family-key = support-family | first %}
-	{% assign support-family-values = page[include.stats_key][support-family-key] %}
+	{% assign support-family-values = include.stats[support-family-key] %}
 	{% assign support-family-name = include.nicenames[support-family-key] | default: support-family-key %}
 	{% comment %}
 		2. We loop through every platform listed for that family.

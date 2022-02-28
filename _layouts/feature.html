@@ -15,10 +15,10 @@ layout: default
 		<div class="feature-header-column">
       <div>
         {% if page.client_stats %}
-          {% include feature-support.html title="Client" stats_key="client_stats" nicenames=site.data.nicenames.client %}
+          {% include feature-support.html title="Client" stats=page.client_stats nicenames=site.data.nicenames.client %}
         {% endif %}
         {% if page.server_stats %}
-          {% include feature-support.html title="Server" stats_key="server_stats" nicenames=site.data.nicenames.server %}
+          {% include feature-support.html title="Server" stats=page.server_stats nicenames=site.data.nicenames.server %}
         {% endif %}
       </div>
 		</div>
@@ -27,53 +27,8 @@ layout: default
 		<button type="button" class="filter-button filter-apply-button filter-button--active">Apply settings</button>
 		<button type="button" class="filter-button filter-unapply-button">Show all</button>
 	</div>
-  {% if page.client_stats %}
-    <h2>Clients</h2>
-    {% include feature-details.html stats_key="client_stats" family=site.clients nicenames=site.data.nicenames.client family-path="clients" %}
-  {% endif %}
-  {% if page.server_stats %}
-    <h2>Servers</h2>
-    {% include feature-details.html stats_key="server_stats" family=site.servers nicenames=site.data.nicenames.server family-path="servers" %}
-  {% endif %}
-
+	{% include feature-body.html feature=page %}
 	<footer class="feature-footer">
-		{% assign has-page-notes = false %}
-		{% if page.notes != nil and page.notes != "" %}
-			{% assign has-page-notes = true %}
-		{% endif %}
-		{% if has-page-notes == true or page.footnotes.size > 0 or page.links.size > 0 %}
-		<div class="data-notes">
-			{% if has-page-notes == true or page.footnotes.size > 0 %}
-				<h2 class="list-title">Notes</h2>
-				{% if has-page-notes == true %}
-				{{ page.notes | markdownify }}
-				{% endif %}
-				{% if page.footnotes.size > 0 %}
-				<ul class="data-notes-list">
-				{% for note in page.footnotes %}
-					{% assign note-key = note.key %}
-					{% assign note-value = note.value %}
-					<li class="data-note" id="{{ page.title | slugify }}-cite-note-{{ note-key | slugify }}">
-						<span class="data-note-key">{{ note-key }}</span> {{ note-value | markdownify }}
-					</li>
-				{% endfor %}
-				</ul>
-				{% endif %}
-			{% endif %}
-			{% if page.links.size > 0 %}
-				<h2 class="list-title">Resources</h2>
-				<ul class="list">
-				{% for entry in page.links %}
-					{% assign link-title = entry.title %}
-					{% assign link-url = entry.link %}
-					<li>
-						<a href="{{ link-url | escape_once }}">{{ link-title | markdownify | strip_html | strip }}</a>
-					</li>
-				{% endfor %}
-				</ul>
-			{% endif %}
-		</div>
-		{% endif %}
 		<div class="data-contribute">
 			<h2 class="list-title">Know something we don't?</h2>
 			<p>
@@ -84,51 +39,8 @@ layout: default
 				<a href="{{ site.github.issues_url }}" class="button">Report an issue on GitHub</a>
 			</div>
 			<p>
-				Not comfortable with GitHub? <a href="mailto:feature@caniemail.com?subject=[caniemail]%20{{ page.id | uri_escape }}">Send us an email</a> or <a href="https://www.twitter.com/caniemail">get in touch on Twitter</a>.
+				Not comfortable with GitHub? <a href="mailto:feature@caniemail.com?subject=[caniemail]%20{{ include.feature.id | uri_escape }}">Send us an email</a> or <a href="https://www.twitter.com/caniemail">get in touch on Twitter</a>.
 			</p>
-		</div>
-		<div class="data-test">
-			<h2 class="list-title">Test it yourself</h2>
-			{% if page.last_test_date != nil and page.last_test_date != "" %}
-			<p>
-				This feature was last tested on <b>{{ page.last_test_date | date: '%B %d, %Y' }}</b>.
-			</p>
-			{% endif %}
-			<p>
-				If you want to test this feature in the same conditions as we did, you can get our test code and run a test by yourself. Make sure to follow our <a href="https://github.com/hteumeuleu/caniemail/blob/master/CONTRIBUTING.md">testing recommendations</a> first.
-			</p>
-			<div class="button-group">
-				{% comment %}
-					View test code button.
-				{% endcomment %}
-				{% if page.test_url != nil and page.test_url != "" %}
-				<a href="{{ page.test_url }}" class="button">View the test code</a>
-				{% endif %}
-				{% comment %}
-					View test results button.
-					If the last_text_date is more than 30 days old, the link might have expired so we don't show anything.
-				{% endcomment %}
-				{% if page.test_results_url != nil and page.test_results_url != "" and page.last_test_date != nil and page.last_test_date != ""  %}
-					{% assign last_test_date_timestamp = page.last_test_date | date: '%s' %}
-					{% assign now_timestamp = 'now' | date: '%s' %}
-					{% assign last_test_date_in_seconds = now_timestamp | minus: last_test_date_timestamp %}
-					{% assign last_test_date_in_days = last_test_date_in_seconds | divided_by: 3600 | divided_by: 24 %}
-					{% if last_test_date_in_days < 30  %}
-						{% assign test-results-url-provider = "" %}
-						{% if page.test_results_url contains "emailonacid.com"  %}
-							{% assign test-results-url-provider = "Email on Acid" %}
-						{% elsif page.test_results_url contains "testi.at" %}
-							{% assign test-results-url-provider = "Testi@" %}
-						{% elsif page.test_results_url contains "litmus.com" %}
-							{% assign test-results-url-provider = "Litmus" %}
-						{% endif %}
-						{% if test-results-url-provider != "" %}
-							{% assign test-results-url-provider = test-results-url-provider | prepend: " on " %}
-						{% endif %}
-						<a href="{{ page.test_results_url }}" class="button">View test results{{test-results-url-provider}}</a>
-					{% endif %}
-				{% endif %}
-			</div>
 		</div>
 	</footer>
 </section>

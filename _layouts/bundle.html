@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+{% assign features = site.features | where_exp: "feature", "feature.bundles contains page.slug" | where: "published", true   %}
+
+
+<div class="post">
+	<div class="post-inside">
+		<h1 class="post-title">{{ page.title | default: page.slug }}</h1>
+		{{ content | markdownify }}
+
+
+        <section>
+            <h2>Associated features</h2>
+            
+            
+            {% assign features-by-category = features |group_by:"category" %}
+            {% for category in features-by-category %}
+                <h3 class="list-title" id="title-{{ category.name | slugify }}">{{ site.data.nicenames.category[category.name] | default: category.name }}</h3>
+                <ul class="list list--features">
+                    {% assign features = category.items | sort:'id' %}
+                    {% for feature in features %}
+                        <li><a href="#{{feature.slug}}">{{ feature.title | escape_once }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+            </section>
+            
+    
+	</div>
+</div>
+{% for feature in features %}
+    
+<section class="feature feature--placeholder" data-slug="{{feature.slug}}">
+    <header class="feature-header">
+        <div class="feature-header-column">
+            <h1 class="feature-title"><a href="{{site.url}}/{{ feature.url}}">{{feature.title}}<span class="feature-permalink" aria-hidden="true">#</span></a></h1>
+        </div>
+        <div class="feature-header-column">
+        </div>
+    </header>
+	{% include feature-body.html feature=feature %}
+</section>
+{% endfor %}

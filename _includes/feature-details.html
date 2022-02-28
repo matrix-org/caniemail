@@ -19,9 +19,9 @@
 				2. We go through the page/feature `stats` and add all the keys.
 			{% endcomment %}
 			{% assign page-stats-keys = "" | split: '' %}
-			{% for default in page[include.stats_key] %}
+			{% for default in include.stats %}
 				{% assign family-key = default | first %}
-				{% if page[include.stats_key][family-key].size > 0  %}
+				{% if include.stats[family-key].size > 0  %}
 					{% assign page-stats-keys = page-stats-keys | push: family-key %}
 				{% endif %}
 			{% endfor %}
@@ -34,7 +34,7 @@
 			{% endcomment %}
 			{% for family in page-families-in-order %}
 				{% assign family-key = family %}
-				{% assign family-values = page[include.stats_key][family] %}
+				{% assign family-values = include.stats[family] %}
 			<div class="data-family data-family--{{family-key}}" id="data-{{ page.title | slugify }}-{{ family-key }}">
 				<h3 class="data-family-name">
 					<span>

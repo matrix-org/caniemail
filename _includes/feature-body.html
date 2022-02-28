@@ -1,0 +1,49 @@
+
+{% if include.feature.client_stats %}
+  <h2>Clients</h2>
+  {% include feature-details.html stats=include.feature.client_stats family=site.clients nicenames=site.data.nicenames.client family-path="clients" %}
+{% endif %}
+{% if include.feature.server_stats %}
+  <h2>Servers</h2>
+  {% include feature-details.html stats=include.feature.server_stats family=site.servers nicenames=site.data.nicenames.server family-path="servers" %}
+{% endif %}
+
+  <footer class="feature-footer">
+      {% assign has-page-notes = false %}
+      {% if include.feature.notes != nil and include.feature.notes != "" %}
+          {% assign has-page-notes = true %}
+      {% endif %}
+      {% if has-page-notes == true or include.feature.footnotes.size > 0 or include.feature.links.size > 0 %}
+      <div class="data-notes">
+          {% if has-page-notes == true or include.feature.footnotes.size > 0 %}
+              <h2 class="list-title">Notes</h2>
+              {% if has-page-notes == true %}
+              {{ include.feature.notes | markdownify }}
+              {% endif %}
+              {% if include.feature.footnotes.size > 0 %}
+              <ul class="data-notes-list">
+              {% for note in include.feature.footnotes %}
+                  {% assign note-key = note.key %}
+                  {% assign note-value = note.value %}
+                  <li class="data-note" id="{{ include.feature.title | slugify }}-cite-note-{{ note-key | slugify }}">
+                      <span class="data-note-key">{{ note-key }}</span> {{ note-value | markdownify }}
+                  </li>
+              {% endfor %}
+              </ul>
+              {% endif %}
+          {% endif %}
+          {% if include.feature.links.size > 0 %}
+              <h2 class="list-title">Resources</h2>
+              <ul class="list">
+              {% for entry in include.feature.links %}
+                  {% assign link-title = entry.title %}
+                  {% assign link-url = entry.link %}
+                  <li>
+                      <a href="{{ link-url | escape_once }}">{{ link-title | markdownify | strip_html | strip }}</a>
+                  </li>
+              {% endfor %}
+              </ul>
+          {% endif %}
+      </div>
+      {% endif %}
+  </footer>

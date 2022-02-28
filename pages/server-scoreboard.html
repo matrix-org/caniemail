@@ -10,6 +10,6 @@ permalink: /servers/scoreboard
 			This page ranks matrix servers based on their support among the <b>{{ site.features| where: "published", truec | size | default: "many" }}</b> features listed.
 		</p>
 	</div>
-  {% include scores.html stats_key="server_stats" family=site.servers family-path="servers" %}
+  {% include scores.html stats=page.server_stats family=site.servers family-path="servers" %}
 
 </div>

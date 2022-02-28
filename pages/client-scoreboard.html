@@ -10,6 +10,6 @@ permalink: /clients/scoreboard
 			This page ranks matrix Client based on their support among the <b>{{ site.features | where: "published", true | default: "many" }}</b> features listed.
 		</p>
 	</div>
-  {% include scores.html stats_key="client_stats" family=site.clients family-path="clients" %}
+  {% include scores.html stats=page.client_stats family=site.clients family-path="clients" %}
 
-</div>
+</div>statsfamily
