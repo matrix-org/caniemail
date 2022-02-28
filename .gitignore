@@ -1,4 +1,8 @@
 .sass-cache
 .DS_Store
 .jekyll-metadata
+_site.bundle/
+.ruby-version
+vendor/
+.bundle
 _site
